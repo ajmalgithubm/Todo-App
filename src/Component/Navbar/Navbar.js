@@ -8,7 +8,7 @@ function Navbar() {
             <h1>ToDo List</h1>
         </div>
         <div className='listItem'>
-            <h3>Complted Task</h3>
+            <h3>Completed Task</h3>
         </div>
         <div className='listItem'>
             <h3>Incompleted Task</h3>
