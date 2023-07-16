@@ -3,8 +3,8 @@ import './Navbar.css'
 function Navbar() {
     return (
         <div>
-            <div className='d-flex justify-content-around align-items-center p-2 bg-info'>
-                <div className='listItem'>
+            <div className='d-flex justify-content-around align-items-center p-2 bg-info flex-wrap'>
+                <div className='listItem' >
                     <h1>ToDo List</h1>
                 </div>
                 <div className='listItem'>

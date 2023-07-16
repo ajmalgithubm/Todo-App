@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from './Component/Navbar/Navbar';
-import Todos from './Component/Todos/Todos';
+import AddTask from './Component/AddTask/AddTask';
 function App() {
   return (
     <div>
      <Navbar/>
-     <Todos/>
+     <AddTask/>
 
     </div>
   )
