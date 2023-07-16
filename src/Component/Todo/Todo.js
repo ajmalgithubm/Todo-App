@@ -1,7 +1,7 @@
 import React from 'react';
 import './Todo.css'
 
-function Todo() {
+function Todo({taskName, status, date}) {
     return (
         <div style={{ padding: '10px' }}>
             <div style={{ display: 'flex', flexDirection: "column", padding: '10px', backgroundColor: '#1f6918', borderRadius: "10px", color: 'white', boxShadow: '0px 0px 10px 4px grey' }} className='bg-success'>
@@ -11,14 +11,14 @@ function Todo() {
                     </button>
                 </div>
                 <div>
-                    <h4 style={{ textAlign: 'center',textDecoration:'crossline' }}>Task Name</h4>
+                    <h4 style={{ textAlign: 'center',textDecoration:'crossline' }}>{taskName}</h4>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap',marginTop:'50px',alignItems:'center' }}>
                     <div>
-                        <p>created at Time Date</p>
+                        <p style={{ fontSize: "16px", fontWeight: '400' }}>{date}</p>
                     </div>
                     <div>
-                        <p style={{fontSize:"16px",fontWeight:'400'}}>status</p>
+                        <p style={{fontSize:"16px",fontWeight:'400'}}>{status}</p>
                     </div>
                     <div>
                         <button className='btn btn-danger btn-sm'>Finish</button>

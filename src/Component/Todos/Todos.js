@@ -1,9 +1,16 @@
 import React from 'react'
 import Todo from '../Todo/Todo'
-function Todos() {
+function Todos({taskList}) {
+  
   return (
-    <div>
-      <Todo/>
+    <div style={{padding:'10px'}}>
+      {
+      tasks.map((task,index) => {
+        return(
+          <Todo task ={} key={index+1}/>
+        )
+      })
+    }
     </div>
   )
 }
