@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './Component/Navbar/Navbar';
 import AddTask from './Component/AddTask/AddTask';
 import Todos from './Component/Todos/Todos';
+
 function App() {
   const [addTaskPage, setAddTaskPage] = useState(true);
   const [tasks, setTasks] = useState([]);
@@ -11,7 +12,7 @@ function App() {
     <div>
       <Navbar addTaskPage={addTaskPage} setAddTaskPage={setAddTaskPage} setFinishTask={setFinishTask} setPendingTask={setPendingTask} />
       { addTaskPage?
-        <AddTask setTaskList={setTasks} taskList={tasks}/>:<Todos taskList={tasks}/>
+        <AddTask setTaskList={setTasks} taskList={tasks} /> : (finishTask ? (<Todos taskList={tasks} finishTask={finishTask} setAddTaskPage={setAddTaskPage}/>) : (<Todos taskList={tasks} pendingTask={pendingTask} setAddTaskPage={setAddTaskPage}/>))
       }
     </div>
 
