@@ -11,10 +11,10 @@ function Navbar() {
                     <h3>Add Task</h3>
                 </div>
                 <div className='listItem'>
-                    <h3>Completed Task</h3>
+                    <h3>Pending Task</h3>
                 </div>
                 <div className='listItem'>
-                    <h3>Incompleted Task</h3>
+                    <h3>Finished Task</h3>
                 </div>
             </div>
         </div>
