@@ -7,21 +7,21 @@ function Navbar({setAddTaskPage, setFinishTask, setPendingTask}) {
                 <div className='listItem' >
                     <h1>ToDo List</h1>
                 </div>
-                <div className='listItem' onClick={()=> {
+                <div className='listItem' style={{ cursor: 'pointer' }} onClick={()=> {
                     setAddTaskPage(true);
                     setFinishTask(false);
                     setPendingTask(false);
                 }}>
                     <h3>Add Task</h3>
                 </div>
-                <div className='listItem' onClick={() =>{
+                <div className='listItem' style={{cursor:'pointer'}} onClick={() =>{
                     setAddTaskPage(false);
                     setPendingTask(true);
                     setFinishTask(false);
                 } }>
                     <h3>Pending Task</h3>
                 </div>
-                <div className='listItem' onClick={() => {
+                <div className='listItem' style={{ cursor: 'pointer' }} onClick={() => {
                     setAddTaskPage(false);
                     setFinishTask(true);
                     setPendingTask(false);

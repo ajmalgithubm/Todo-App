@@ -7,14 +7,24 @@ function AddTask({taskList, setTaskList}) {
     e.preventDefault()
     let currentArrayObject = [...taskList];
     let sampleObj = {taskName:textAreaContent, id:id, status:'incomplete'};
-    currentArrayObject.push(sampleObj);
-    setTaskList(currentArrayObject)
-    setId(id+1);
+    if(sampleObj.taskName !== ''){
+        currentArrayObject.push(sampleObj);
+        setTaskList(currentArrayObject)
+        setId(id + 1);
+        //alert("One Task Added...");
+        let textArea = document.getElementById('textArea');
+        textArea.value = '';
+        textArea.focus();
+
+    }else{
+        alert('Please Enter Task...')
+    }
+    
   }
   return (
     <div style={{padding:"20px",display:'flex',justifyContent:'center'}}>
       <form>
-        <textarea onChange={(e) => setTextAreaContent(e.target.value)} name="" id="" cols="30" rows="10" placeholder='please enter your task...' style={{padding:'10px',border:'3px solid black'}}></textarea>
+        <textarea id='textArea' onChange={(e) => setTextAreaContent(e.target.value)} name=""  cols="30" rows="10" placeholder='please enter your task...' style={{padding:'10px',border:'3px solid black'}}></textarea>
         <br />
         <button onClick={addtaskInToList} style={{border:'2px solid black',padding:'5px',color:'black',fontWeight:'500'}}>Submit Task</button>
       </form>
