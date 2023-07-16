@@ -13,6 +13,7 @@ function Todo({taskName, status, id, taskList, setAddTaskPage}) {
             }
         }
         if(driven){
+            
             setAddTaskPage(currentList);
         }
         
