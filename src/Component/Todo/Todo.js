@@ -1,7 +1,7 @@
 import React from 'react';
 import './Todo.css'
 
-function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, finishTask}) {
+function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, finishTask, numberTaskFinished, setNumberTaskFinished, numberTaskPending, setNumberTaskPending}) {
     const finishTaskFunction =(e,id) => {
         e.preventDefault()
         let driven = false;
@@ -13,7 +13,8 @@ function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, fini
             }
         }
         if(driven){
-
+            setNumberTaskFinished(numberTaskFinished+1);
+            setNumberTaskPending(numberTaskPending-1);
             setAddTaskPage(currentList);
         }
         

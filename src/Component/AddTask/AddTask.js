@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function AddTask({taskList, setTaskList}) {
+function AddTask({taskList, setTaskList, numberTaskPending, setNumberTaskPending}) {
   const [textAreaContent, setTextAreaContent] = useState('');
   const [id, setId] =useState(1);
   const addtaskInToList =(e) => {
@@ -15,6 +15,7 @@ function AddTask({taskList, setTaskList}) {
         let textArea = document.getElementById('textArea');
         textArea.value = '';
         textArea.focus();
+        setNumberTaskPending(numberTaskPending+1);
 
     }else{
         alert('Please Enter Task...')
