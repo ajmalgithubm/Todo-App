@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './Component/Navbar/Navbar';
 import AddTask from './Component/AddTask/AddTask';
 import Todos from './Component/Todos/Todos';
+import Welcome from './Component/Welcome/Welcome';
 
 function App() {
   const [addTaskPage, setAddTaskPage] = useState(false);
@@ -14,7 +15,7 @@ function App() {
     <div>
       <Navbar addTaskPage={addTaskPage} setAddTaskPage={setAddTaskPage} setFinishTask={setFinishTask} setPendingTask={setPendingTask} setNumberTaskPending={setNumberTaskPending} numberTaskPending={numberTaskPending} numberTaskFinished={numberTaskFinished} setNumberTaskFinished={setNumberTaskFinished} />
       {
-        (!addTaskPage&&!finishTask&&!pendingTask)&&<h1>Welcome To  ToDo App</h1>
+        (!addTaskPage&&!finishTask&&!pendingTask)&&(<Welcome/>)
       }
       {
         addTaskPage && (<AddTask setTaskList={setTasks} taskList={tasks} setNumberTaskPending={setNumberTaskPending} numberTaskPending={numberTaskPending}/>)
