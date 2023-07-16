@@ -1,7 +1,7 @@
 import React from 'react';
 import './Todo.css'
 
-function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, finishTask, numberTaskFinished, setNumberTaskFinished, numberTaskPending, setNumberTaskPending}) {
+function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, finishTask, numberTaskFinished, setNumberTaskFinished, numberTaskPending, setNumberTaskPending, date}) {
     const finishTaskFunction =(e,id) => {
         e.preventDefault()
         let driven = false;
@@ -34,7 +34,7 @@ function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, fini
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap', marginTop: '50px', alignItems: 'center' }}>
                             <div>
-                                <p style={{ fontSize: "16px", fontWeight: '400' }}>19/09/2023</p>
+                                <p style={{ fontSize: "16px", fontWeight: '400' }}>{date}</p>
                             </div>
                             <div>
                                 <p style={{ fontSize: "16px", fontWeight: '400' }}>Pending ......</p>
@@ -59,7 +59,7 @@ function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, fini
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap', marginTop: '50px', alignItems: 'center' }}>
                             <div>
-                                <p style={{ fontSize: "16px", fontWeight: '400' }}>19/09/2023</p>
+                                <p style={{ fontSize: "16px", fontWeight: '400' }}>{date}</p>
                             </div>
                             <div>
                                 <p style={{ fontSize: "16px", fontWeight: '400' }}>Completed...</p>

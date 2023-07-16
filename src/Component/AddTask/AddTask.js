@@ -6,7 +6,8 @@ function AddTask({taskList, setTaskList, numberTaskPending, setNumberTaskPending
   const addtaskInToList =(e) => {
     e.preventDefault()
     let currentArrayObject = [...taskList];
-    let sampleObj = {taskName:textAreaContent, id:id, status:'incomplete'};
+    let date = new Date().toLocaleTimeString()
+    let sampleObj = {taskName:textAreaContent, id:id, status:'incomplete', date:date};
     if(sampleObj.taskName !== ''){
         currentArrayObject.push(sampleObj);
         setTaskList(currentArrayObject)
