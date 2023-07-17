@@ -14,9 +14,16 @@ function App() {
   return (
     <div>
       <Navbar addTaskPage={addTaskPage} setAddTaskPage={setAddTaskPage} setFinishTask={setFinishTask} setPendingTask={setPendingTask} setNumberTaskPending={setNumberTaskPending} numberTaskPending={numberTaskPending} numberTaskFinished={numberTaskFinished} setNumberTaskFinished={setNumberTaskFinished} />
-      {
-        (!addTaskPage&&!finishTask&&!pendingTask)&&(<Welcome/>)
+      
+      {(!addTaskPage && !finishTask && !pendingTask) && (<Welcome addTaskPage={addTaskPage} finishTask={finishTask} pendingTask={pendingTask} numberTaskFinished={numberTaskFinished} numberTaskPending={numberTaskPending}/>)
       }
+      {
+        (numberTaskPending === 0 && pendingTask) && (<Welcome addTaskPage={addTaskPage} finishTask={finishTask} pendingTask={pendingTask} numberTaskFinished={numberTaskFinished} numberTaskPending={numberTaskPending} />)
+      }
+      {
+        (numberTaskFinished === 0 && finishTask) && (<Welcome addTaskPage={addTaskPage} finishTask={finishTask} pendingTask={pendingTask} numberTaskFinished={numberTaskFinished} numberTaskPending={numberTaskPending} />)
+      }
+      
       {
         addTaskPage && (<AddTask setTaskList={setTasks} taskList={tasks} setNumberTaskPending={setNumberTaskPending} numberTaskPending={numberTaskPending}/>)
       }
