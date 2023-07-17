@@ -8,7 +8,7 @@ function AddTask({taskList, setTaskList, numberTaskPending, setNumberTaskPending
     let currentArrayObject = [...taskList];
     let date = new Date().toLocaleTimeString()
     let sampleObj = {taskName:textAreaContent, id:id, status:'incomplete', date:date};
-    if(sampleObj.taskName !== ''){
+    if(sampleObj.taskName.trim() !== ''){
         currentArrayObject.push(sampleObj);
         setTaskList(currentArrayObject)
         setId(id + 1);
