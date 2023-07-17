@@ -18,6 +18,24 @@ function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, fini
             setAddTaskPage(currentList);
         }
         
+    };
+    const removeTask = (e, id)=> {
+        e.preventDefault();
+        let newTaskList = [];
+        let currentList = [...taskList];
+        for(let task of currentList){
+            if(task['id'] ===id && task['status'] ==='incomplete'){
+                setNumberTaskPending(numberTaskPending-1);
+            }
+            if(task['id'] ===id && task['status'] ==='completed'){
+                setNumberTaskFinished(numberTaskFinished-1);
+            }
+            if(task['id'] !== id){
+                newTaskList.push(task);
+            }
+        }
+        setAddTaskPage(newTaskList);
+
     }
     return (
         <div>
@@ -25,7 +43,7 @@ function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, fini
                (pendingTask && status==='incomplete') && (<div style={{ padding: '10px' }}>
                     <div style={{ display: 'flex', flexDirection: "column", padding: '10px', backgroundColor: '#1f6918', borderRadius: "10px", color: 'white', boxShadow: '0px 0px 10px 4px grey' }} className='bg-success'>
                         <div>
-                            <button type="button" className="close bg-lg closeButton border-0" aria-label="Close" style={{ float: 'right', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'white' }}>
+                            <button onClick={(e) => {removeTask(e,id)}} type="button" className="close bg-lg closeButton border-0" aria-label="Close" style={{ float: 'right', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'white' }}>
                                 <span aria-hidden="true" className='text-danger font-weight-bold' >&times;</span>
                             </button>
                         </div>
@@ -50,7 +68,7 @@ function Todo({taskName, status, id, taskList, setAddTaskPage, pendingTask, fini
                 (finishTask && status === 'completed') && (<div style={{ padding: '10px' }}>
                     <div style={{ display: 'flex', flexDirection: "column", padding: '10px', backgroundColor: '#1f6918', borderRadius: "10px", color: 'white', boxShadow: '0px 0px 10px 4px grey' }} className='bg-danger'>
                         <div>
-                            <button type="button" className="close bg-lg closeButton border-0" aria-label="Close" style={{ float: 'right', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'white' }}>
+                            <button onClick={(e) => removeTask(e,id)} type="button" className="close bg-lg closeButton border-0" aria-label="Close" style={{ float: 'right', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'white' }}>
                                 <span aria-hidden="true" className='text-danger font-weight-bold' >&times;</span>
                             </button>
                         </div>
