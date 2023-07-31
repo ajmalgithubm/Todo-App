@@ -1,4 +1,3 @@
-A ToDo app made with React.js is a simple web application that allows users to manage and keep track of their tasks. It provides functionalities to add new tasks, mark tasks as completed, and display the current pending tasks as well as the finished tasks. The primary goal of such an app is to help users stay organized and manage their daily tasks effectively.
 
 Here's a breakdown of the main features and components of a typical ToDo app built with React.js:
 
